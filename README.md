@@ -1,15 +1,32 @@
-# MCP Research Pipeline
+# SCAN-MCP Research Pipeline
 
-This repository contains a static-analysis and LLM-assisted pipeline for analyzing MCP server repositories. The pipeline extracts MCP tool names, resolves tool handlers, builds intra-tool call chains, compacts tool code, and then runs single-tool and multi-tool vulnerability analysis.
+This anonymous artifact contains a static-analysis and LLM-assisted pipeline for analyzing MCP server repositories. The pipeline extracts MCP tool names, resolves tool handlers, builds intra-tool call chains, compacts tool code, and runs single-tool and multi-tool vulnerability analysis.
 
-Demo projects and sample inputs are stored in the `demos/` folder. If this checkout does not include that folder yet, create it at the repository root and place the demo MCP servers there. For a quick test, copy one demo server into `mcp_servers_repos/` and run the pipeline on that small input before scaling to a large corpus.
+The artifact includes sample inputs and sandbox demonstration materials under `demos/`. For a quick availability check, reviewers can inspect the included demo materials and run the pipeline on a small copied input under `mcp_servers_repos/` before scaling to a larger corpus. Additional MCP server repositories can be placed under `mcp_servers_repos/` using the directory layout described below.
+
+## Review-Only Notice
+
+This anonymous artifact is provided solely for review, verification, and replication of the accompanying double-anonymous submission. Program committee members and reviewers may inspect, execute, and evaluate the artifact for review purposes.
+
+The code, dataset metadata, prompts, proof-of-concept materials, and demonstration videos are not yet released for public distribution, reuse, redistribution, mirroring, or derivative use outside the review process. No license for broader use is granted at this stage.
+
+## Ethical and Responsible Use Disclaimer
+
+This artifact is intended strictly for academic, educational, and defensive security research. The pipeline analyzes MCP server repositories and may include security-evaluation materials, vulnerability candidates, proof-of-concept inputs, and sandbox demonstration videos.
+
+Do not deploy these tools, prompts, or proof-of-concept materials against production systems, unauthorized environments, live third-party services, or infrastructure that you do not own or have explicit permission to test. All evaluations should be confined to isolated, legally authorized, and locally controlled sandbox environments.
+
+The artifact is designed for offline analysis of repository snapshots. It does not require probing live MCP deployments. Users are responsible for ensuring that any use of this artifact complies with applicable laws, policies, and ethical security-research practices.
 
 ## 0. Video Demos
 
-We provide video demos with the supplementary materials. Reviewers can download the video files and watch them locally.
+The `demos/` folder includes three sandbox demonstration videos corresponding to the case studies in the paper:
 
-The demos illustrate how to prepare example MCP server inputs, run the pipeline, and inspect the generated analysis outputs. The corresponding demo projects and sample inputs are stored in the `demos/` folder. 
+1. Arbitrary command execution.
+2. Write-and-execute tool-chain vulnerability.
+3. Browse-click-upload tool-chain vulnerability.
 
+These videos demonstrate the confirmed behaviors in isolated sandbox environments and do not require probing live deployments.
 
 ## 1. Create a Conda Environment
 
@@ -45,13 +62,15 @@ ok
 
 ## 4. Configure LLM Credentials
 
-Several scripts call an OpenAI-compatible chat-completions endpoint. For Azure/OpenAI-compatible usage, set these variables in PowerShell:
+Inspecting the artifact and watching the sandbox demonstration videos does not require any API credentials. Re-running the LLM-assisted analysis steps requires access to an OpenAI-compatible chat-completions endpoint.
+
+For Azure/OpenAI-compatible usage, set these variables in PowerShell:
 
 ```powershell
 $env:AZURE_API_KEY="<your-api-key>"
 $env:OPENAI_API_KEY=$env:AZURE_API_KEY
-$env:OPENAI_API_BASE="<open-api>"
-$env:OPENAI_MODEL="<modol-name>"
+$env:OPENAI_API_BASE="<your-endpoint-url>"
+$env:OPENAI_MODEL="<model-name>"
 ```
 
 Some legacy scripts use older variable names. Set these as aliases if you want them to use the same endpoint and model:
