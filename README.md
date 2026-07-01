@@ -8,7 +8,7 @@ Demo projects and sample inputs are stored in the `demos/` folder. If this check
 
 We provide video demos with the supplementary materials. Reviewers can download the video files and watch them locally.
 
-The demos illustrate how to prepare example MCP server inputs, run the pipeline, and inspect the generated analysis outputs. The corresponding demo projects and sample inputs are stored in the `demos/` folder. If this checkout does not include that folder yet, create it at the repository root and place the demo MCP servers there.
+The demos illustrate how to prepare example MCP server inputs, run the pipeline, and inspect the generated analysis outputs. The corresponding demo projects and sample inputs are stored in the `demos/` folder. 
 
 
 ## 1. Create a Conda Environment
@@ -26,29 +26,7 @@ python -m pip install --upgrade pip
 Install the runtime packages required by the pipeline scripts.
 
 ```powershell
-python -m pip install `
-  openai==2.6.1 `
-  requests==2.32.5 `
-  httpx==0.28.1 `
-  tqdm==4.67.1 `
-  networkx==3.5 `
-  langgraph==1.2.7 `
-  langgraph-checkpoint==4.1.1 `
-  langgraph-prebuilt==1.1.0 `
-  langgraph-sdk==0.4.2 `
-  langchain-core==1.4.8 `
-  tree-sitter==0.25.2 `
-  tree-sitter-python==0.25.0 `
-  tree-sitter-go==0.25.0 `
-  tree-sitter-php==0.24.1 `
-  tree-sitter-java==0.23.5 `
-  tree-sitter-c-sharp==0.23.1 `
-  tree-sitter-javascript==0.25.0 `
-  tree-sitter-typescript==0.23.2 `
-  tree-sitter-kotlin==1.1.0 `
-  tree-sitter-ruby==0.23.1 `
-  tree-sitter-rust==0.24.0 `
-  tree-sitter-swift==0.0.1
+python -m pip install -r requirements.txt
 ```
 
 If your network has trouble reaching PyPI, configure a mirror and then rerun the install command above:
@@ -97,10 +75,6 @@ Before running the phase-6 scripts, also check whether the script itself contain
 ## 5. Prepare Input Repositories
 
 Run all commands from the repository root, not from the `scripts/` directory.
-
-```powershell
-cd D:\mac\Workspace\Workspace\B657\MCP_research
-```
 
 Place MCP server repositories under `mcp_servers_repos/`:
 
