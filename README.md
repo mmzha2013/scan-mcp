@@ -183,7 +183,7 @@ python .\scripts\6_tool_chains_candidate_pairs_2.py
 This script can also run by group if you provide a groups file:
 
 ```powershell
-python .\scripts\6_tool_chains_candidate_pairs_2.py --groups-file groups.json --group-index 0
+python .\scripts\6_tool_chains_candidate_pairs_2.py
 ```
 
 Typical outputs:
