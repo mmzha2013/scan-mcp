@@ -29,12 +29,6 @@ Install the runtime packages required by the pipeline scripts.
 python -m pip install -r requirements.txt
 ```
 
-If your network has trouble reaching PyPI, configure a mirror and then rerun the install command above:
-
-```powershell
-python -m pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-```
-
 ## 3. Verify the Environment
 
 Run this import check before starting the pipeline.
@@ -56,8 +50,8 @@ Several scripts call an OpenAI-compatible chat-completions endpoint. For Azure/O
 ```powershell
 $env:AZURE_API_KEY="<your-api-key>"
 $env:OPENAI_API_KEY=$env:AZURE_API_KEY
-$env:OPENAI_API_BASE="https://mzha-0007-resource.services.ai.azure.com/openai/v1"
-$env:OPENAI_MODEL="grok-4-1-fast-reasoning"
+$env:OPENAI_API_BASE="<open-api>"
+$env:OPENAI_MODEL="<modol-name>"
 ```
 
 Some legacy scripts use older variable names. Set these as aliases if you want them to use the same endpoint and model:
