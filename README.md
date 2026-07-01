@@ -84,13 +84,6 @@ mcp_servers_repos/
     ...
 ```
 
-For demo runs, use the `demos/` folder:
-
-```powershell
-New-Item -ItemType Directory -Force .\mcp_servers_repos
-Copy-Item -Recurse .\demos\<demo-server-folder> .\mcp_servers_repos\
-```
-
 ## 6. Run the Pipeline
 
 ### Step 1: Extract Tool Names
