@@ -93,7 +93,7 @@ def process_one_project(project_dir: Path) -> Tuple[str, bool, str]:
         return project_dir.name, False, f"error: {e}"
 
 def discover_projects(root: Path) -> List[Path]:
-    # Prefer top-level dirs under code2; allow a fallback to rglob if not found.
+    # Prefer top-level project directories; fall back to recursive search if needed.
     if not root.exists():
         return []
     dirs = [p for p in root.iterdir() if p.is_dir() and (p / JSON_NAME).exists()]
@@ -126,7 +126,7 @@ def main() -> None:
                 summary["errors"][name] = msg
                 print(f"[{name}] FAILED  {msg}")
 
-    # Write summary to top-level next to code2
+    # Write summary next to CODE_ROOT.
     summary_path = CODE_ROOT.parent / "tool_codes_compact_v1__SUMMARY.json"
     summary_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
     print("\n=== SUMMARY ===")
