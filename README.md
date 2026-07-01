@@ -4,6 +4,13 @@ This repository contains a static-analysis and LLM-assisted pipeline for analyzi
 
 Demo projects and sample inputs are stored in the `demos/` folder. If this checkout does not include that folder yet, create it at the repository root and place the demo MCP servers there. For a quick test, copy one demo server into `mcp_servers_repos/` and run the pipeline on that small input before scaling to a large corpus.
 
+## 0. Video Demos
+
+We provide video demos with the supplementary materials. Reviewers can download the video files and watch them locally.
+
+The demos illustrate how to prepare example MCP server inputs, run the pipeline, and inspect the generated analysis outputs. The corresponding demo projects and sample inputs are stored in the `demos/` folder. If this checkout does not include that folder yet, create it at the repository root and place the demo MCP servers there.
+
+
 ## 1. Create a Conda Environment
 
 Use Python 3.11 for the cleanest dependency compatibility.
