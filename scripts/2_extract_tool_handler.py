@@ -1343,8 +1343,7 @@ def process_one_project(proj: Path) -> Tuple[str, Optional[str]]:
             handler_file_path = None
             start_line_hint = 1
 
-            if t == "getMultisigTransaction":
-                print('d')
+            
 
             # ---------- Step 2: Resolve & Verify ----------
             if handler_type == "INLINE_FUNCTION":
@@ -1612,13 +1611,7 @@ def main():
     max_procs = 2#int(os.environ.get("MAX_PROCS", '4'))
     print(f"Found {len(projects_old)} projects. Running with MAX_PROCS={max_procs}.")
     summary = {"processed": 0, "ok": 0, "failed": 0, "errors": {}}
-    project_names = ["arbbets__scheduler-mcp","bhushangitfull__file-mcp-smith","big-omega__mem0-mcp","cloudflare__playwright-mcp","qKitNp__sherlock_mcp"]
     projects = []
-    '''
-    for project in projects_old:
-        if project.name in project_names:
-            projects.append(project)
-    '''
 
     projects = [p for p in CODE_DIR.iterdir() if p.is_dir() and (p / "grep_tool_extraction.json").exists()]
     # Use ProcessPoolExecutor for parallel project processing
