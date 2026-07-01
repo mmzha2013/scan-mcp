@@ -229,7 +229,6 @@ def process_mcp_server(server_dir):
             continue
 
         tool_names.append(tool_name)
-    #tool_names = ["browser_snapshot","browser_click","browser_drag","browser_hover","browser_type","browser_select_option","browser_take_screenshot","browser_screen_capture","browser_screen_move_mouse","browser_screen_click","browser_screen_drag","browser_screen_type","browser_tab_list","browser_tab_new","browser_tab_select","browser_tab_close","browser_navigate","browser_navigate_back","browser_navigate_forward","browser_press_key","browser_console_messages","browser_file_upload","browser_pdf_save","browser_close","browser_wait","browser_resize","browser_handle_dialog"]
 
     # Create a ThreadPoolExecutor to limit the number of threads
     with ThreadPoolExecutor(max_workers=10) as executor:  # Limit to 5 concurrent threads
@@ -242,9 +241,9 @@ def process_mcp_server(server_dir):
             future.result()  # This will re-raise any exceptions encountered during the thread execution
 
 
-# Function to process all MCP servers in sample_5 folder
+# Function to process all MCP servers in the input folder.
 def process_all_servers(sample_folder):
-    # Get all MCP server directories in sample_5
+    # Get all MCP server directories in the input folder.
     server_dirs = [os.path.join(sample_folder, d) for d in os.listdir(sample_folder) if
                    os.path.isdir(os.path.join(sample_folder, d))]
 
