@@ -659,16 +659,15 @@ def process_mcp_server(server_dir):
     end_time = time.perf_counter()
     print("time useage for one tool:", end_time - start_time, "s")
 
-# Function to process all MCP servers in sample_5 folder
+# Function to process all MCP servers in the input folder.
 def process_all_servers(sample_folder):
-    # Get all MCP server directories in sample_5
+    # Get all MCP server directories in the input folder.
     server_dirs = [os.path.join(sample_folder, d) for d in os.listdir(sample_folder) if
                    os.path.isdir(os.path.join(sample_folder, d))]
-    #server_dirs = ["./mcp_sample_100/barryyip0625__mcp-discord"]
+    
     # Process each server
     for server_dir in server_dirs:
-        #if "buckylee2019__excel-mcp-server" not in server_dir:
-        #    continue
+        
         print(f"Processing MCP Server: {server_dir}")
         chains_file = os.path.join(server_dir, "_phase1_vulnerable_chains.json")
         if os.path.exists(chains_file):
