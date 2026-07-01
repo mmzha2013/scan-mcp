@@ -2820,10 +2820,6 @@ def process_server_phase1(json_file: Path, api_key_dict) -> tuple[str, list]:
     #one_tool_name =  random.choices(tool_names)
 
     for tool_name, tool_code_snippets in tool_code_map.items():
-        #if tool_name not in one_tool_name:
-        #    continue
-        # if tool_name == 'execute_command':
-        #    print('d')
         print(tool_name)
         server_dir = OUTPUT_DIR_PHASE1 / server_name / 'results_phase1_no_slicing'
         server_dir.mkdir(parents=True, exist_ok=True)
