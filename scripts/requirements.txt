@@ -1,4 +1,4 @@
-# Python >= 3.10
+# Python >= 3.11
 #
 # Minimal pinned runtime dependencies for the MCP_research pipeline scripts:
 # 1_tool_name_extraction.py
